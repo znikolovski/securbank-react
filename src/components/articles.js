@@ -32,11 +32,11 @@ function Articles() {
         console.log(responseData)
         displayData = responseData.data.articleList.items.map(function(article,index) {
             return(
-                <li key={index} itemscope="" itemid="urn:aemconnection:undefined/jcr:content/data/master" itemtype="reference" itemfilter="cf">
-                <div itemprop="headline" itemtype="text">
+                <li key={index} itemscope="" itemid="urn:aemconnection:undefined/jcr:content/data/master" itemType="reference" itemfilter="cf">
+                <div itemProp="headline" itemType="text">
                     <h5>{article.headline}</h5>
                 </div>
-                <div itemprop="main" itemtype="richtext">{article.main['plaintext']}</div>
+                <div itemProp="main" itemType="richtext">{article.main['plaintext']}</div>
             </li>
             )
         })
