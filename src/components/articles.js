@@ -30,9 +30,14 @@ function Articles() {
         const response = await fetch(aemurl)
         const responseData = await response.json()
         console.log(responseData)
-        displayData = responseData.data.articleList.items.map(function(article) {
+        displayData = responseData.data.articleList.items.map(function(article,index) {
             return(
-                <p key={article.headline}>{article.headline}</p>
+                <li key={index} itemscope="" itemid="urn:aemconnection:undefined/jcr:content/data/master" itemtype="reference" itemfilter="cf">
+                <div itemprop="headline" itemtype="text">
+                    <h5>{article.headline}</h5>
+                </div>
+                <div itemprop="main" itemtype="richtext">{article.main['plaintext']}</div>
+            </li>
             )
         })
         setshowArticles(displayData)
@@ -44,9 +49,9 @@ function Articles() {
     },[])
 
     return (
-        <div>
+        <ul>
         {showArticles}
-        </div>
+        </ul>
     )
 
 }
