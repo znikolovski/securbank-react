@@ -9,7 +9,7 @@ function Articles() {
 
 
     const [showArticles, setshowArticles] = useState()
-    const aemurl = 'https://publish-p55117-e571178.adobeaemcloud.com/graphql/execute.json/frescopa/ArticleList';
+    const aemurl = 'https://publish-p55117-e571178.adobeaemcloud.com/graphql/execute.json/frescopa/ArticleList'+"?ts="+Math.random()*1000;
     let displayData
 
     async function fetchCF() {
@@ -20,6 +20,7 @@ function Articles() {
         console.log(responseData)
         displayData = responseData.data.articleList.items.map(function(article,index) {
             itemId =  "urn:aemconnection:" + article._path + "/jcr:content/data/master";
+            console.log(itemId)
 
             return(
                 <li key={index} itemScope="" itemId={itemId} itemType="reference" itemfilter="cf">
