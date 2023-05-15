@@ -2,6 +2,7 @@
 //import { useArticles } from "../api/usePersistedQueries";
 
 import { useEffect, useState } from "react"
+import './articles.css';
 
 function Articles() {
 
@@ -37,7 +38,7 @@ function Articles() {
     },[])
 
     return (
-        <ul>
+        <ul className="articleList">
         {showArticles}
         </ul>
     )

@@ -1,0 +1,13 @@
+.articleList {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 15px;
+}
+
+.articleList li {
+    text-decoration: none;
+    max-width: 300px;
+    font-size: 18px;
+}
