@@ -5,13 +5,18 @@ function Articles() {
 
     const [showArticles, setshowArticles] = useState()
     const aempublishurl = 'https://publish-p55117-e571178.adobeaemcloud.com';
-    const aemurl = 'https://author-p55117-e571178.adobeaemcloud.com/graphql/execute.json/frescopa/ArticleList'+"?ts="+Math.random()*1000;
+    const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
+    const aemurl = `/graphql/execute.json/frescopa/ArticleList?ts=${Math.random()*1000}`;
     let displayData
     let options = {credentials: "include"};
     
 
     async function fetchCF() {
-        const response = await fetch(aemurl,options)
+        let url = aempublishurl + aemurl
+        if(window.location && window.location.href.indexOf('experience.adobe.com') > -1) {
+            url = aemauthorurl + aemurl
+        }
+        const response = await fetch(url, options)
         // TODO - Add error handling here
         const responseData = await response.json()
         // TODO - Add error handling here
