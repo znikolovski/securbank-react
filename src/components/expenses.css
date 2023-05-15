@@ -8,10 +8,8 @@
 }
 
 .sectionHeading {
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--text-color);
     text-align: left;
-    font: normal normal 800 24px/30px Adobe Clean;
+    font: normal normal 900 24px/30px adobe-clean;
     letter-spacing: 0px;
     color: #2C2C2C;
     opacity: 1;

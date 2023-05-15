@@ -7,7 +7,7 @@
 
 .sectionHeading {
     text-align: left;
-    font: normal normal 800 24px/30px Adobe Clean;
+    font: normal normal 900 24px/30px adobe-clean;
     letter-spacing: 0px;
     color: #2C2C2C;
     opacity: 1;
@@ -17,7 +17,7 @@
 #transactionList {
     width: 100%;
     text-align: left;
-    font: normal normal normal 16px/24px Adobe Clean;
+    font: normal normal normal 16px/24px adobe-clean;
     letter-spacing: 0px;
     color: #2C2C2C;
     opacity: 1;
