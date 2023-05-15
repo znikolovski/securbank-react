@@ -2,6 +2,9 @@ import logo from './resources/SecurBank_Logo_Main.svg';
 import banner from './resources/banner.png';
 import './App.css';
 import Articles from './components/articles';
+import Accountdetails from './components/accountdetails';
+import Transactions from './components/transactions';
+import Expenses from './components/expenses';
 
 function App() {
   return (
@@ -18,6 +21,13 @@ function App() {
       <main>
         <div className='section'>
           <div><img src={banner} className="banner" alt="banner" /></div>
+          <div>
+            <Accountdetails />
+          </div>
+          <div className='twocol'>
+            <Transactions/>
+            <Expenses />
+          </div>
           <div>
             <Articles />
             </div>

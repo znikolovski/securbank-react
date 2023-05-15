@@ -1,6 +1,3 @@
-
-//import { useArticles } from "../api/usePersistedQueries";
-
 import { useEffect, useState } from "react"
 import './articles.css';
 

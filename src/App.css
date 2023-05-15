@@ -20,3 +20,8 @@ header {
 .logo {
   height: 37px;
 }
+
+.twocol {
+  display: flex;
+  justify-content: space-between;
+}
