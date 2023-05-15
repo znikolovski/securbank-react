@@ -3,15 +3,13 @@
 
 import { useEffect, useState } from "react"
 
-
-
 function Articles() {
-
 
     const [showArticles, setshowArticles] = useState()
     const aemurl = 'https://author-p55117-e571178.adobeaemcloud.com/graphql/execute.json/frescopa/ArticleList'+"?ts="+Math.random()*1000;
     let displayData
     let options = {credentials: "include"};
+    
 
     async function fetchCF() {
         const response = await fetch(aemurl,options)
@@ -24,10 +22,8 @@ function Articles() {
             console.log(itemId)
 
             return(
-                <li key={index} itemScope="" itemId={itemId} itemType="reference" itemfilter="cf">
-                <div itemProp="headline" itemType="text">
-                    <h5>{article.headline}</h5>
-                </div>
+                <li key={index} itemScope="" itemID={itemId} itemType="reference" itemfilter="cf">
+                    <h5 itemProp="headline" itemType="text">{article.headline}</h5>
                 <div itemProp="main" itemType="richtext">{article.main['plaintext']}</div>
             </li>
             )
