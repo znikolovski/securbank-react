@@ -1,13 +1,22 @@
 .articleList {
-    max-width: 1000px;
+    width: 1480px;
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    gap: 15px;
+    justify-content:space-between;
+    padding: 0;
+    padding-inline-start:0;
+    color: #2C2C2C;
 }
 
 .articleList li {
     text-decoration: none;
-    max-width: 300px;
+    max-width: 470px;
     font-size: 18px;
+}
+
+.articleImage {
+    width: 470px;
+    aspect-ratio: 16 / 9 ;
+    object-fit: cover;
 }
