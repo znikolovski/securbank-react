@@ -26,8 +26,8 @@ function Articles() {
             return(
                 <li key={index} itemScope itemID={itemId} itemType="reference" itemfilter="cf">
                     <img itemProp="heroImage" itemType="image" className="articleImage" src={imageURL} />
-                    <h5 itemProp="headline" itemType="text">{article.headline}</h5>
-                    <div itemProp="main" itemType="richtext">{article.main['plaintext']}</div>
+                    <h5 itemProp="headline" itemType="text" className="articleHeading">{article.headline}</h5>
+                    <div itemProp="main" itemType="richtext" className="articleDescription">{article.main['plaintext']}</div>
                 </li>
             )
         })
