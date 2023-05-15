@@ -1,6 +1,6 @@
-# Create React App
+# SecurBank Dashboard Demo
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+Create React App example for use with AEM Headless. Calls AEM Persisted Query for Article content at the bottom of the page, and will allow authoring of content within the Univerasl Editor.
 
 ## Deploy Your Own
 
