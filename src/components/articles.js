@@ -23,10 +23,10 @@ function Articles() {
             console.log(itemId)
 
             return(
-                <li key={index} itemScope="" itemID={itemId} itemType="reference" itemfilter="cf">
+                <li key={index} itemScope itemID={itemId} itemType="reference" itemfilter="cf">
                     <h5 itemProp="headline" itemType="text">{article.headline}</h5>
-                <div itemProp="main" itemType="richtext">{article.main['plaintext']}</div>
-            </li>
+                    <div itemProp="main" itemType="richtext">{article.main['plaintext']}</div>
+                </li>
             )
         })
         setshowArticles(displayData)
