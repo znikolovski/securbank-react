@@ -16,6 +16,17 @@ function App() {
         <div className='header-nav'>
           <div>
             <img src={logo} className="logo" alt="logo" />
+            <div>
+              <ul>
+                <li><strong>Dashboard</strong></li>
+                <li>Saving Account</li>
+                <li>Transactions</li>
+                <li>Cards</li>
+              </ul>
+            </div>
+            <div>
+              <div className='authFriendly'>Mark Szulc</div>
+            </div>
           </div>
       </div>
         

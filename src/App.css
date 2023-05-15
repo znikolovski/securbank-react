@@ -33,7 +33,33 @@ header {
   padding: 17.5px;
   max-width: 1480px;
   margin: auto;
+}
 
+.header-nav div{
+  display: flex;
+  justify-content:space-between;
+}
+
+.header-nav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  min-width: 600px;
+  padding-top: 8px;
+}
+
+.header-nav li{
+  text-align: left;
+  font: normal normal 16px/20px Adobe Clean;
+  letter-spacing: 0px;
+  color: #818A96;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.header-nav li strong{
+  color: #000;
 }
 
 .logo {
@@ -43,4 +69,13 @@ header {
 .twocol {
   display: flex;
   justify-content: space-between;
+}
+
+.authFriendly {
+  padding-top: 8px;
+  text-align: right;
+  font: normal normal 18px/24px Adobe Clean;
+  letter-spacing: 0px;
+  color: #2C2C2C;
+  opacity: 1;
 }
