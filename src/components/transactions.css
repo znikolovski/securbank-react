@@ -21,7 +21,7 @@
 
 #transactionList td, #transactionList th {
     border-bottom: 2px solid #0000000D;
-    padding: 15px 0px;
+    padding: 19px 0px;
 }
 
   #transactionList td:nth-child(5) {

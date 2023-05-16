@@ -2,15 +2,20 @@
     width: 695px;
     min-height: 445px;
     
-    padding: 15px;
+    padding: 0px;
     margin: 20px 0px
 
 }
 
+.expenses h4{
+    margin-bottom: 15px;
+}
 
 .info {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .infoBox {
@@ -22,8 +27,8 @@
     border-radius: 6px;
     opacity: 1;
     height: 107px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
     margin-top: 1rem;
     padding-top: 1rem;
 }
