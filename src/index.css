@@ -227,6 +227,7 @@ main .section {
   .section > div {
     max-width: 1480px;
     margin: auto;
+    padding: 0 15px;
   }
 }
 
