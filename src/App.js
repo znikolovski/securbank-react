@@ -7,6 +7,8 @@ import Articles from './components/articles';
 import Accountdetails from './components/accountdetails';
 import Transactions from './components/transactions';
 import Expenses from './components/expenses';
+import Accountbalance from './components/accountbalance';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -38,8 +40,9 @@ function App() {
       <main>
         <div className='section'>
           <div><img src={banner} className="banner" alt="banner" /></div>
-          <div>
+          <div >
             <Accountdetails />
+            <Accountbalance />
           </div>
           <div className='twocol'>
             <Transactions/>
@@ -51,7 +54,7 @@ function App() {
         </div>
       </main>
 
-      <footer></footer>
+      <footer><Footer /></footer>
     </div>
   );
 }
