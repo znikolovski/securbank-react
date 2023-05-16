@@ -170,7 +170,13 @@ export default function Expenses() {
                             data: [820, 932, 901, 934, 1290, 1330, 1320],
                             type: 'line',
                             symbol: 'none',
-                            smooth: true
+                            smooth: true,
+                            itemStyle: {
+                                color: '#0296A6'
+                            },
+                            lineStyle: {
+                                width: 4
+                            }
                             }
                         ]}} /></span></div>
                 </div>
@@ -192,10 +198,16 @@ export default function Expenses() {
                     },
                     series: [
                         {
-                        data: [820, 932, 901, 934, 1290, 1330, 1320],
-                        type: 'line',
-                        symbol: 'none',
-                        smooth: true
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            type: 'line',
+                            symbol: 'none',
+                            smooth: true,
+                            itemStyle: {
+                                color: '#DB2E7E'
+                            },
+                            lineStyle: {
+                                width: 4
+                            }
                         }
                     ]}} /></span></div>
                 </div>
@@ -220,7 +232,13 @@ export default function Expenses() {
                             data: [820, 932, 901, 934, 1290, 1330, 1320],
                             type: 'line',
                             symbol: 'none',
-                            smooth: true
+                            smooth: true,
+                            itemStyle: {
+                                color: '#000000'
+                            },
+                            lineStyle: {
+                                width: 4
+                            }
                             }
                         ]}} /></span></div>
                 </div>
