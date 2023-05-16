@@ -47,6 +47,10 @@ export default function Expenses() {
               },
               axisTick: {
                 show: false
+              },
+              axisLabel: {
+                fontWeight: 'bolder',
+                fontFamily: 'Adobe Clean'
               }
             },
             yAxis: {
@@ -60,7 +64,6 @@ export default function Expenses() {
                 },
               }
             },
-            
             series: [
               {
                 data: [
@@ -146,6 +149,7 @@ export default function Expenses() {
                     echarts={echarts} 
                     notMerge={true}
                     lazyUpdate={true}
+                    autoResize={true}
                     option={showExpenses} />
             }
             <div className='info'>

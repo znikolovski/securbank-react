@@ -95,3 +95,9 @@
     color: #DB2E7E;
 }
 
+@media (max-width: 600px) {
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+}
