@@ -1,5 +1,7 @@
 import logo from './resources/SecurBank_Logo_Main.svg';
+import bell from './resources/bell.svg';
 import banner from './resources/banner.png';
+import avatar from './resources/avatar.png';
 import './App.css';
 import Articles from './components/articles';
 import Accountdetails from './components/accountdetails';
@@ -19,12 +21,14 @@ function App() {
             <div>
               <ul>
                 <li><strong>Dashboard</strong></li>
-                <li>Saving Account</li>
-                <li>Transactions</li>
-                <li>Cards</li>
+                <li><a href="#">Saving Account</a></li>
+                <li><a href="#">Transactions</a></li>
+                <li><a href="#">Cards</a></li>
               </ul>
             </div>
             <div>
+              <img src={bell} className="bell" alt="bell" />
+              <img src={avatar} className="avatar" alt="avatar" />
               <div className='authFriendly'>Mark Szulc</div>
             </div>
           </div>
