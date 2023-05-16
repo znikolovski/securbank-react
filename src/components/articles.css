@@ -23,7 +23,7 @@
 
 .articleHeading {
     text-align: left;
-    font: normal normal 800 24px/30px Adobe Clean;
+    font: normal normal 800 24px/30px adobe-clean;
     letter-spacing: 0px;
     color: #2C2C2C;
     opacity: 1;
@@ -32,7 +32,7 @@
 
 .articleDescription {
     text-align: left;
-    font: normal normal normal 20px/24px Adobe Clean;
+    font: normal normal normal 20px/24px adobe-clean;
     letter-spacing: 0px;
     color: #2C2C2C;
     opacity: 1;
