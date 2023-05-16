@@ -13,7 +13,8 @@ function Articles() {
 
     async function fetchCF() {
         let url = aempublishurl + aemurl
-        if(window.location && window.location.href.indexOf('experience.adobe.com') > -1) {
+        console.log(window.location.ancestorOrigins.length)
+        if(window.location && window.location.ancestorOrigins.length > 0) {
             url = aemauthorurl + aemurl
         }
         const response = await fetch(url, options)
