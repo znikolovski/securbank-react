@@ -17,11 +17,13 @@ function Articles() {
         if(window.location && window.location.ancestorOrigins.length > 0) {
             url = aemauthorurl + aemurl
         }
-        const response = await fetch(url, options)
-        // TODO - Add error handling here
-        const responseData = await response.json()
-        // TODO - Add error handling here
-        let itemId, imageURL
+        try {
+            const response = await fetch(url, options)
+            // TODO - Add error handling here
+            const responseData = await response.json()
+            // TODO - Add error handling here
+            let itemId, imageURL
+
 
 
         console.log(responseData)
@@ -39,6 +41,9 @@ function Articles() {
         })
         setshowArticles(displayData)
 
+    } catch {
+        return(<li>No articles</li>)
+    }
     }
 
     useEffect(() => {

@@ -4,10 +4,10 @@ import banner from './resources/banner.png';
 import avatar from './resources/avatar.png';
 import './App.css';
 import Articles from './components/articles';
-import Accountdetails from './components/accountdetails';
+import Accountbalance from './components/accountbalance';
 import Transactions from './components/transactions';
 import Expenses from './components/expenses';
-import Accountbalance from './components/accountbalance';
+import CreditCardDetails from './components/creditcarddetails';
 import Footer from './components/footer';
 
 function App() {
@@ -40,9 +40,9 @@ function App() {
       <main>
         <div className='section'>
           <div><img src={banner} className="banner" alt="banner" /></div>
-          <div >
-            <Accountdetails />
+          <div className='twocol'>
             <Accountbalance />
+            <CreditCardDetails />
           </div>
           <div className='twocol'>
             <Transactions/>
