@@ -4,9 +4,9 @@ import './articles.css';
 function Articles() {
 
     const [showArticles, setshowArticles] = useState()
-    const aempublishurl = 'https://publish-p55117-e571178.adobeaemcloud.com';
-    const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
-    const aemurl = `/graphql/execute.json/securbank/ArticleList?ts=${Math.random()*1000}`;
+    const aempublishurl = process.env.REACT_APP_AEM_PUBLISH;
+    const aemauthorurl = process.env.REACT_APP_AEM_AUTHOR;
+    const aemurl = process.env.REACT_APP_PERSISTEDQUERY_URL + `?ts=${Math.random()*1000}`;
     let displayData
     let options = {credentials: "include"};
     
