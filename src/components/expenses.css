@@ -4,7 +4,10 @@
     
     padding: 0px;
     margin: 20px 0px
-    @media only screen and (min-width: 1400px)  {
+
+}
+@media only screen and (min-width: 1400px)  {
+    .expenses {
         width: 695px;
     }
 }

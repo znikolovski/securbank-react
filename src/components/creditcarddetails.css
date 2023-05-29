@@ -2,7 +2,10 @@
     padding-top: 96px;
     width: 600px;
     padding-bottom: 13px;
-    @media only screen and (min-width: 1400px)  {
+}
+
+@media only screen and (min-width: 1400px)  {
+    .creditcarddetails {
         width: 695px;
     }
 }
