@@ -1,13 +1,18 @@
 .accountbalance {
 
-    max-width: 695px;
-    width: 695px;
+    max-width: 600px;
+    width: 600px;
     height: 143px;
     padding: 0px 40px;
     box-sizing: border-box;
     margin-top: 45px;
     display: flex;
     flex-direction: row;
+    @media only screen and (min-width: 1400px)  {
+        width: 695px;
+        max-width: 695px;
+    
+    }
 }
 
 .balance {
