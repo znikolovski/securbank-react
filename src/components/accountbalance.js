@@ -7,7 +7,7 @@ export default function Accountbalance() {
     return (
         <div>
             <div>
-                <h2 className="greeting">Hello, Mark</h2>
+                <h2 className="greeting">Hello, Zoran</h2>
                 <p className='accountNoLabel'>Account Number</p>
                 <p className='accountNo'>5122 6233 9544 3487</p>
             </div>
