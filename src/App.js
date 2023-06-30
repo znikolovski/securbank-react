@@ -1,7 +1,7 @@
 import logo from './resources/SecurBank_Logo_Main.svg';
 import bell from './resources/bell.svg';
 import banner from './resources/banner.png';
-import avatar from './resources/avatar.png';
+import avatar from './resources/avatar.jpeg';
 import './App.css';
 import Articles from './components/articles';
 import Accountbalance from './components/accountbalance';
