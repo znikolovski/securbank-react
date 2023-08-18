@@ -4,9 +4,9 @@ import './articles.css';
 function Articles() {
 
     const [showArticles, setshowArticles] = useState()
-    const aempublishurl = 'https://publish-p55117-e571178.adobeaemcloud.com';
-    const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
-    const aemurl = `/graphql/execute.json/frescopa/ArticleList?ts=${Math.random()*1000}`;
+    const aempublishurl = process.env.REACT_APP_AEM_PUBLISH;
+    const aemauthorurl = process.env.REACT_APP_AEM_AUTHOR;
+    const aemurl = process.env.REACT_APP_PERSISTEDQUERY_URL + `?ts=${Math.random()*1000}`;
     let displayData
     let options = {credentials: "include"};
     
@@ -17,11 +17,13 @@ function Articles() {
         if(window.location && window.location.ancestorOrigins.length > 0) {
             url = aemauthorurl + aemurl
         }
-        const response = await fetch(url, options)
-        // TODO - Add error handling here
-        const responseData = await response.json()
-        // TODO - Add error handling here
-        let itemId, imageURL
+        try {
+            const response = await fetch(url, options)
+            // TODO - Add error handling here
+            const responseData = await response.json()
+            // TODO - Add error handling here
+            let itemId, imageURL
+
 
 
         console.log(responseData)
@@ -39,6 +41,9 @@ function Articles() {
         })
         setshowArticles(displayData)
 
+    } catch {
+        return(<li>No articles</li>)
+    }
     }
 
     useEffect(() => {

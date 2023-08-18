@@ -1,12 +1,14 @@
 import logo from './resources/SecurBank_Logo_Main.svg';
 import bell from './resources/bell.svg';
 import banner from './resources/banner.png';
-import avatar from './resources/avatar.png';
+import avatar from './resources/avatar.jpeg';
 import './App.css';
 import Articles from './components/articles';
-import Accountdetails from './components/accountdetails';
+import Accountbalance from './components/accountbalance';
 import Transactions from './components/transactions';
 import Expenses from './components/expenses';
+import CreditCardDetails from './components/creditcarddetails';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -29,7 +31,7 @@ function App() {
             <div>
               <img src={bell} className="bell" alt="bell" />
               <img src={avatar} className="avatar" alt="avatar" />
-              <div className='authFriendly'>Mark Szulc</div>
+              <div className='authFriendly'>Zoran Nikolovski</div>
             </div>
           </div>
       </div>
@@ -38,8 +40,9 @@ function App() {
       <main>
         <div className='section'>
           <div><img src={banner} className="banner" alt="banner" /></div>
-          <div>
-            <Accountdetails />
+          <div className='twocol'>
+            <Accountbalance />
+            <CreditCardDetails />
           </div>
           <div className='twocol'>
             <Transactions/>
@@ -51,7 +54,7 @@ function App() {
         </div>
       </main>
 
-      <footer></footer>
+      <footer><Footer /></footer>
     </div>
   );
 }

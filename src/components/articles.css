@@ -10,8 +10,16 @@
 
 .articleList li {
     text-decoration: none;
-    max-width: 470px;
+    max-width: 400px;
     font-size: 18px;
+
+    
+}
+
+@media only screen and (min-width: 1400px)  {
+    .articleList li {
+        max-width: 470px;
+    }
 }
 
 .articleImage {
