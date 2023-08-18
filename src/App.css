@@ -96,3 +96,12 @@ header {
   color: #2C2C2C;
   opacity: 1;
 }
+
+.avatar {
+  height: 40px;
+  margin-right: 16px;
+}
+
+.bell {
+  margin-right: 16px;
+}
