@@ -32,10 +32,10 @@ function Articles() {
             imageURL = aempublishurl + article.heroImage._dynamicUrl + "&width=470";
 
             return(
-                <li key={index} itemScope itemID={itemId} itemType="reference" itemfilter="cf">
-                    <img itemProp="heroImage" itemType="media" className="articleImage" src={imageURL} />
-                    <h5 itemProp="headline" itemType="text" className="articleHeading">{article.headline}</h5>
-                    <div itemProp="main" itemType="richtext" className="articleDescription">{article.main['plaintext']}</div>
+                <li key={index}  data-aue-resource={itemId} data-aue-type="reference" data-aue-filter="cf">
+                    <img data-aue-prop="heroImage" data-aue-type="media" className="articleImage" src={imageURL} />
+                    <h5 data-aue-prop="headline" data-aue-type="text" className="articleHeading">{article.headline}</h5>
+                    <div data-aue-prop="main" data-aue-type="richtext" className="articleDescription">{article.main['plaintext']}</div>
                 </li>
             )
         })
