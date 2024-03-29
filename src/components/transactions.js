@@ -8,6 +8,7 @@ export default function Transactions() {
         <div className='transactions'>
             <h4 className='sectionHeading'>Latest Transactions</h4>
             <table id="transactionList">
+                <tbody>
                 <tr>
                     <td><img src={shopicon} /></td><td><strong>Farmer's Shop</strong><br/>15/05/2023</td><td>Grocery</td><td>Card Payment</td><td>-$345</td>
                 </tr>
@@ -23,7 +24,7 @@ export default function Transactions() {
                 <tr>
                     <td><img src={shopicon} /></td><td><strong>Farmer's Shop</strong><br/>12/05/2023</td><td>Grocery</td><td>Card Payment</td><td>-$23</td>
                 </tr>
-
+                </tbody>
             </table>
         </div>
     )
