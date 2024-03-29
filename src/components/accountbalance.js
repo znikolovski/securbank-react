@@ -1,13 +1,13 @@
 import maskedbackground from '../resources/maskedbackground.svg';
 import './accountbalance.css';
 
-export default function Accountbalance() {
+export default function Accountbalance({greeting}) {
 
 
     return (
         <div>
             <div>
-                <h2 className="greeting">Hello, Mark</h2>
+                <h2 className="greeting">{greeting + ', Mark'}</h2>
                 <p className='accountNoLabel'>Account Number</p>
                 <p className='accountNo'>5122 6233 9544 3487</p>
             </div>

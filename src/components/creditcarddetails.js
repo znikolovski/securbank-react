@@ -2,13 +2,13 @@ import creditcardgreen from '../resources/creditcardgreen.png';
 import creditcardgold from '../resources/creditcardgold.png';
 import './creditcarddetails.css';
 
-export default function CreditCardDetails() {
+export default function CreditCardDetails({ cardLabel }) {
 
 
     return (
         <div>
             <div className='creditcarddetails'>
-                <p className='accountNoLabel'>My Card</p>
+                <p className='accountNoLabel'>{cardLabel}</p>
                 <p className='accountNo'>SecurBank Rewards</p>
             </div>
             <div className='flexrow'>

@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import logo from './resources/SecurBank_Logo_Main.svg';
 import bell from './resources/bell.svg';
 import banner from './resources/banner.png';
@@ -9,8 +11,22 @@ import Transactions from './components/transactions';
 import Expenses from './components/expenses';
 import CreditCardDetails from './components/creditcarddetails';
 import Footer from './components/footer';
+import FetchContent from './api/contentrequest';
 
 function App() {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const result = await FetchContent();
+      setContent(result.data.dashboardByPath.item);
+      console.log(result.data.dashboardByPath.item);
+    };
+
+    fetchContent();
+  }, []);
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,10 +55,10 @@ function App() {
       </header>
       <main>
         <div className='section'>
-          <div><img src={banner} className="banner" alt="banner" /></div>
+          <div><img src={content && content.banner._publishUrl} className="banner" alt="banner" /></div>
           <div className='twocol'>
-            <Accountbalance />
-            <CreditCardDetails />
+            <Accountbalance greeting={content && content.greeting} />
+            <CreditCardDetails cardLabel={content && content.cardLabel}  />
           </div>
           <div className='twocol'>
             <Transactions/>
