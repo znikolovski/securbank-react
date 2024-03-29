@@ -58,7 +58,7 @@ function App() {
       </header>
       <main >
         <div className='section' data-aue-resource={itemId} data-aue-type="reference" data-aue-filter="cf">
-          <div><img src={content && content.banner._publishUrl} className="banner" alt="banner" data-aue-prop="banner"  data-aue-type="media"  /></div>
+          <div><a href={content && content.bannerUrl}><img src={content && content.banner._publishUrl} className="banner" alt="banner" data-aue-prop="banner"  data-aue-type="media"  /></a></div>
           <div className='twocol'>
             <Accountbalance greeting={content && content.greeting} />
             <CreditCardDetails cardLabel={content && content.cardLabel}  />
@@ -68,7 +68,7 @@ function App() {
             <Expenses expensesTitle={content && content.expensesTitle} />
           </div>
           <div>
-            <Articles />
+            <Articles articles={content && content.articles} />
             </div>
         </div>
       </main>
