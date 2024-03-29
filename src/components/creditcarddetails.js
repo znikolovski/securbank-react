@@ -8,7 +8,7 @@ export default function CreditCardDetails({ cardLabel }) {
     return (
         <div>
             <div className='creditcarddetails'>
-                <p className='accountNoLabel'>{cardLabel}</p>
+                <p className='accountNoLabel' span data-aue-prop="cardLabel" data-aue-type="text">{cardLabel}</p>
                 <p className='accountNo'>SecurBank Rewards</p>
             </div>
             <div className='flexrow'>

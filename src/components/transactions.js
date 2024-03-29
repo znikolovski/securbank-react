@@ -3,10 +3,10 @@ import shopicon from '../resources/shop_icon.svg';
 import financeicon from '../resources/finance_icon.svg';
 import entertainmenticon from '../resources/entertainment_icon.svg';
 
-export default function Transactions() {
+export default function Transactions({ transactionTitle }) {
     return (
         <div className='transactions'>
-            <h4 className='sectionHeading'>Latest Transactions</h4>
+            <h4 className='sectionHeading' data-aue-prop="transactionTitle" data-aue-type="text">{transactionTitle}</h4>
             <table id="transactionList">
                 <tbody>
                 <tr>

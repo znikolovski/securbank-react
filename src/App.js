@@ -64,8 +64,8 @@ function App() {
             <CreditCardDetails cardLabel={content && content.cardLabel}  />
           </div>
           <div className='twocol'>
-            <Transactions/>
-            <Expenses />
+            <Transactions transactionTitle={content && content.transactionTitle}/>
+            <Expenses expensesTitle={content && content.expensesTitle} />
           </div>
           <div>
             <Articles />
