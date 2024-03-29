@@ -26,6 +26,9 @@ function App() {
     fetchContent();
   }, []);
 
+  const itemId =  "urn:aemconnection:" + process.env.REACT_APP_PERSISTEDQUERY_URL_DASHBOARD + "/jcr:content/data/master";
+            
+
 
   return (
     <div className="App">
@@ -53,9 +56,9 @@ function App() {
       </div>
         
       </header>
-      <main>
-        <div className='section'>
-          <div><img src={content && content.banner._publishUrl} className="banner" alt="banner" /></div>
+      <main >
+        <div className='section' data-aue-resource={itemId} data-aue-type="reference" data-aue-filter="cf">
+          <div><img src={content && content.banner._publishUrl} className="banner" alt="banner" data-aue-prop="banner"  data-aue-type="media"  /></div>
           <div className='twocol'>
             <Accountbalance greeting={content && content.greeting} />
             <CreditCardDetails cardLabel={content && content.cardLabel}  />
