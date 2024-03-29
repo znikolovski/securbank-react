@@ -6,7 +6,7 @@ export default function Accountbalance({greeting}) {
     return (
         <div>
             <div>
-                <h2 className="greeting"><span data-aue-prop="greeting" data-aue-type="text">{greeting}</span>Mark</h2>
+                <h2 className="greeting" data-aue-prop="greeting" data-aue-type="text">{greeting}</h2>
                 <p className='accountNoLabel'>Account Number</p>
                 <p className='accountNo'>5122 6233 9544 3487</p>
             </div>
