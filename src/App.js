@@ -26,7 +26,7 @@ function App() {
     fetchContent();
   }, []);
 
-  const itemId =  "urn:aemconnection:" + process.env.REACT_APP_PERSISTEDQUERY_URL_DASHBOARD + "/jcr:content/data/master";
+  const itemId =  "urn:aemconnection:/content/dam/securbank/en/dashboard/account-dashboard/jcr:content/data/master";
             
 
 
