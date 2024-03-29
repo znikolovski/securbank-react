@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import logo from './resources/SecurBank_Logo_Main.svg';
 import bell from './resources/bell.svg';
-import banner from './resources/banner.png';
 import avatar from './resources/avatar.png';
 import './App.css';
 import Articles from './components/articles';
@@ -20,7 +19,6 @@ function App() {
     const fetchContent = async () => {
       const result = await FetchContent();
       setContent(result.data.dashboardByPath.item);
-      console.log(result.data.dashboardByPath.item);
     };
 
     fetchContent();
