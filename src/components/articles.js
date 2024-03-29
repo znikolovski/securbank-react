@@ -13,7 +13,6 @@ function Articles() {
 
     async function fetchCF() {
         let url = aempublishurl + aemurl
-        console.log(window.location.ancestorOrigins.length)
         if(window.location && window.location.ancestorOrigins.length > 0) {
             url = aemauthorurl + aemurl
         }
@@ -26,7 +25,6 @@ function Articles() {
 
 
 
-        console.log(responseData)
         displayData = responseData.data.articleList.items.map(function(article,index) {
             itemId =  "urn:aemconnection:" + article._path + "/jcr:content/data/master";
             imageURL = aempublishurl + article.heroImage._dynamicUrl + "&width=470";
