@@ -33,7 +33,6 @@ export default function Expenses() {
     const [showExpenses, setshowExpenses] = useState()
 
     async function getExpenses() {
-        console.log('HERE')
         setshowExpenses({
             grid: { top: 8, right: 8, bottom: 24, left: 36 },
             xAxis: {
