@@ -48,7 +48,7 @@ function App() {
             <div>
               <img src={bell} className="bell" alt="bell" />
               <img src={avatar} className="avatar" alt="avatar" />
-              <div className='authFriendly'>Mark Szulc</div>
+              <div className='authFriendly'>Zoran Nikolovski</div>
             </div>
           </div>
       </div>
