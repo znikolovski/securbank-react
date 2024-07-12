@@ -11,6 +11,7 @@ import Expenses from './components/expenses';
 import CreditCardDetails from './components/creditcarddetails';
 import Footer from './components/footer';
 import FetchContent from './api/contentrequest';
+import FAQ from './components/faq';
 
 function App() {
   const [content, setContent] = useState(null);
@@ -66,8 +67,11 @@ function App() {
             <Expenses expensesTitle={content && content.expensesTitle} />
           </div>
           <div>
+            <FAQ faq={content && content.articles} />
+          </div>
+          <div>
             <Articles articles={content && content.articles} />
-            </div>
+          </div>
         </div>
       </main>
 
