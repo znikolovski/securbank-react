@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import logo from './resources/SecurBank_Logo_Main.svg';
 import bell from './resources/bell.svg';
-import avatar from './resources/avatar.png';
+import avatar from './resources/avatar.jpeg';
 import './App.css';
 import Articles from './components/articles';
 import Accountbalance from './components/accountbalance';
@@ -52,7 +52,7 @@ function App() {
             <div>
               <img src={bell} className="bell" alt="bell" />
               <img src={avatar} className="avatar" alt="avatar" />
-              <div className='authFriendly'>Mark Szulc</div>
+              <div className='authFriendly'>Zoran Nikolovski</div>
             </div>
           </div>
       </div>
