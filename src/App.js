@@ -62,8 +62,8 @@ function App() {
         <div className='section'>
           <div>
             {content && content.offer !== null ? 
-              (<div class="offer-wrapper"><div class="offer block">
-                <div class="banner-content" data-aue-resource={"urn:aemconnection:"+content.offer._path+"/jcr:content/data/main"} data-aue-label="offer content fragment" data-aue-type="reference" data-aue-filter="cf">
+              (<div class="offer-wrapper" data-aue-resource={itemId} data-aue-type="reference" data-aue-filter="cf"><div class="offer block">
+                <div class="banner-content" data-aue-resource={"urn:aemconnection:"+content.offer._path+"/jcr:content/data/master"} data-aue-label="offer content fragment" data-aue-type="reference" data-aue-filter="cf">
                     <div data-aue-prop="heroImage" data-aue-label="hero image" data-aue-type="media" className="banner-detail" style={{backgroundImage: "linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url("+content.offer.heroImage._publishUrl+")"}}>
                         <p data-aue-prop="headline" data-aue-label="headline" data-aue-type="text" className="pretitle">{content.offer.headlie}</p>
                         <p data-aue-prop="pretitle" data-aue-label="pretitle" data-aue-type="text" className="headline">{content.offer.pretitle}</p>
