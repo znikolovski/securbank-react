@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <Helmet>
         <meta name="urn:adobe:aue:system:aemconnection" content={'aem:'+process.env.REACT_APP_AEM_AUTHOR}></meta>
-        <script src="https://assets.adobedtm.com/7bd07c5f18b6/8fc49a6d5078/launch-3de4bc3f0bb6.min.js" async></script>
+        <script src="https://assets.adobedtm.com/7bd07c5f18b6/7c2039a23450/launch-9c7082127cea.min.js" async></script>
       </Helmet>
       <header className="App-header">
         <div className='header-alerts'>
