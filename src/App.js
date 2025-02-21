@@ -30,6 +30,7 @@ function App() {
       setContent(result.data.dashboardByPath.item);
       if (typeof window.adobe != 'undefined' && window.adobe.target && typeof window.adobe.target.triggerView === 'function') {
         console.log(window.adobe);
+        document.documentElement.style.opacity = "0";
         window.adobe.target.getOffer({
           "mbox": "rich-spa",
           "success": function(offer) {
@@ -38,10 +39,11 @@ function App() {
             } else {
               targetOffer(result.data.dashboardByPath.item.offer)
             }
-              
+            document.documentElement.style.opacity = "1";
           },
           "error": function(status, error) {
-              console.log('Error', status, error);
+            console.log('Error', status, error);
+            document.documentElement.style.opacity = "1";
           }
         });
       }
