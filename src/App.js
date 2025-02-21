@@ -20,31 +20,31 @@ function App() {
   const [content, setContent] = useState(null);
 
   const targetOffer= (cnt, offer) => {
-    const content = cnt;
-    content.offer = offer.data.offerByPath.item;
+    const localContent = cnt;
+    localContent.offer = offer.data.offerByPath.item;
 
-    setContent(content);
+    setContent(localContent);
   }
 
   useEffect(() => {
     const fetchContent = async () => {
       const result = await FetchContent();
       setContent(result.data.dashboardByPath.item);
-      if (typeof window.adobe != 'undefined' && window.adobe.target && typeof window.adobe.target.triggerView === 'function') {
-        console.log(window.adobe);
-        window.adobe.target.getOffer({
-          "mbox": "rich-spa",
-          "success": function(offer) {
-            targetOffer(result.data.dashboardByPath.item, offer[0].content[0])
-          },
-          "error": function(status, error) {
-              console.log('Error', status, error);
-          }
-        });
-      }
     };
 
     fetchContent();
+    if (typeof window.adobe != 'undefined' && window.adobe.target && typeof window.adobe.target.triggerView === 'function') {
+      console.log(window.adobe);
+      window.adobe.target.getOffer({
+        "mbox": "rich-spa",
+        "success": function(offer) {
+          targetOffer(content, offer[0].content[0])
+        },
+        "error": function(status, error) {
+            console.log('Error', status, error);
+        }
+      });
+    }
   }, []);
 
   const itemId =  "urn:aemconnection:/content/dam/securbank/en/dashboard/account-dashboard/jcr:content/data/master";
