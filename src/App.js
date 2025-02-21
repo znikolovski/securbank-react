@@ -19,8 +19,10 @@ import { Helmet } from 'react-helmet-async';
 function App() {
   const [content, setContent] = useState(null);
 
-  const targetOffer= (content, offer) => {
+  const targetOffer= (cnt, offer) => {
+    const content = cnt;
     content.offer = offer.data.offerByPath.item;
+
     setContent(content);
   }
 
