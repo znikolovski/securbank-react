@@ -34,7 +34,7 @@ function App() {
         window.adobe.target.getOffer({
           "mbox": "rich-spa",
           "success": function(offer) {
-            targetOffer(offer)
+            targetOffer(offer[0].content[0])
           },
           "error": function(status, error) {
               console.log('Error', status, error);
