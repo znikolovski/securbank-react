@@ -19,10 +19,9 @@ import { Helmet } from 'react-helmet-async';
 function App() {
   const [content, setContent] = useState(null);
 
-  const targetOffer= (offer) => {
-    const origContent = content;
-    origContent.offer = offer.data.offerByPath.item;
-    setContent(origContent);
+  const targetOffer= (content, offer) => {
+    content.offer = offer.data.offerByPath.item;
+    setContent(content);
   }
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function App() {
         window.adobe.target.getOffer({
           "mbox": "rich-spa",
           "success": function(offer) {
-            targetOffer(offer[0].content[0])
+            targetOffer(result.data.dashboardByPath.item, offer[0].content[0])
           },
           "error": function(status, error) {
               console.log('Error', status, error);
