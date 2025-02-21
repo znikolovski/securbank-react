@@ -18,33 +18,37 @@ import { Helmet } from 'react-helmet-async';
 
 function App() {
   const [content, setContent] = useState(null);
+  const [offer, setOffer] = useState(null);
 
-  const targetOffer= (cnt, offer) => {
-    const localContent = cnt;
-    localContent.offer = offer.data.offerByPath.item;
-
-    setContent(localContent);
+  const targetOffer= (offer) => {
+    setOffer(offer);
   }
 
   useEffect(() => {
     const fetchContent = async () => {
       const result = await FetchContent();
       setContent(result.data.dashboardByPath.item);
+      if (typeof window.adobe != 'undefined' && window.adobe.target && typeof window.adobe.target.triggerView === 'function') {
+        console.log(window.adobe);
+        window.adobe.target.getOffer({
+          "mbox": "rich-spa",
+          "success": function(offer) {
+            if(offer && offer[0] && offer[0].content) {
+              targetOffer(offer[0].content[0].data.offerByPath.item)
+            } else {
+              targetOffer(result.data.dashboardByPath.item.offer)
+            }
+              
+          },
+          "error": function(status, error) {
+              console.log('Error', status, error);
+          }
+        });
+      }
     };
 
     fetchContent();
-    if (typeof window.adobe != 'undefined' && window.adobe.target && typeof window.adobe.target.triggerView === 'function') {
-      console.log(window.adobe);
-      window.adobe.target.getOffer({
-        "mbox": "rich-spa",
-        "success": function(offer) {
-          targetOffer(content, offer[0].content[0])
-        },
-        "error": function(status, error) {
-            console.log('Error', status, error);
-        }
-      });
-    }
+    
   }, []);
 
   const itemId =  "urn:aemconnection:/content/dam/securbank/en/dashboard/account-dashboard/jcr:content/data/master";
@@ -82,13 +86,13 @@ function App() {
       <main >
         <div className='section'>
           <div>
-            {content && content.offer !== null ? 
+            {(offer && offer !== null) ? 
               (<div class="offer-wrapper" data-aue-resource={itemId} data-aue-type="reference" data-aue-filter="cf"><div class="offer block">
-                <div class="banner-content" data-aue-resource={"urn:aemconnection:"+content.offer._path+"/jcr:content/data/master"} data-aue-label="offer content fragment" data-aue-type="reference" data-aue-filter="cf">
-                    <div data-aue-prop="heroImage" data-aue-label="hero image" data-aue-type="media" className="banner-detail" style={{backgroundImage: "linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url("+content.offer.heroImage._publishUrl+")"}}>
-                        <p data-aue-prop="headline" data-aue-label="headline" data-aue-type="text" className="pretitle">{content.offer.headline}</p>
-                        <p data-aue-prop="pretitle" data-aue-label="pretitle" data-aue-type="text" className="headline">{content.offer.pretitle}</p>
-                        <p data-aue-prop="detail" data-aue-label="detail" data-aue-type="richtext" className="detail">{content.offer.detail.plaintext}</p>
+                <div class="banner-content" data-aue-resource={"urn:aemconnection:"+offer._path+"/jcr:content/data/master"} data-aue-label="offer content fragment" data-aue-type="reference" data-aue-filter="cf">
+                    <div data-aue-prop="heroImage" data-aue-label="hero image" data-aue-type="media" className="banner-detail" style={{backgroundImage: "linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url("+offer.heroImage._publishUrl+")"}}>
+                        <p data-aue-prop="headline" data-aue-label="headline" data-aue-type="text" className="pretitle">{offer.headline}</p>
+                        <p data-aue-prop="pretitle" data-aue-label="pretitle" data-aue-type="text" className="headline">{offer.pretitle}</p>
+                        <p data-aue-prop="detail" data-aue-label="detail" data-aue-type="richtext" className="detail">{offer.detail.plaintext}</p>
                     </div>
                     <div class="banner-logo">
                     </div>
