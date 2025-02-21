@@ -15,13 +15,32 @@ import FAQ from './components/faq';
 
 import { Helmet } from 'react-helmet-async';
 
+
 function App() {
   const [content, setContent] = useState(null);
+
+  const targetOffer= (offer) => {
+    const origContent = content;
+    origContent.offer = offer.data.offerByPath.item;
+    setContent(origContent);
+  }
 
   useEffect(() => {
     const fetchContent = async () => {
       const result = await FetchContent();
       setContent(result.data.dashboardByPath.item);
+      if (typeof window.adobe != 'undefined' && window.adobe.target && typeof window.adobe.target.triggerView === 'function') {
+        console.log(window.adobe);
+        window.adobe.target.getOffer({
+          "mbox": "rich-spa",
+          "success": function(offer) {
+            targetOffer(offer)
+          },
+          "error": function(status, error) {
+              console.log('Error', status, error);
+          }
+        });
+      }
     };
 
     fetchContent();
